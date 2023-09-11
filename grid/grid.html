@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-areas: 
+            "verde1 verde2 verde2 vermelho1"
+            "verde1 amarelo1 vermelho2 verde3"
+            "verde1 vermelho3 amarelo2 verde3 ";
+
+            min-height: 50vh;
+
+        }
+
+        .box{
+            outline: 1px solid;
+            text-align: center;
+        }
+
+        #box1{
+            grid-area: verde1;
+            background-color: green;
+        }
+
+        #box2{
+            grid-area: verde2;
+            background-color: green;
+            }
+
+        #box3{
+            grid-area: verde3;
+            background-color: green;
+        }
+
+        #box4{
+            grid-area: amarelo1;
+            background-color: yellow;
+        }
+
+        #box5{
+            grid-area: amarelo2;
+            background-color: yellow;
+        }
+
+        #box6{
+            grid-area: vermelho1;
+            background-color: red;
+        }
+
+        #box7{
+            grid-area: vermelho2;
+            background-color: red;
+        }
+
+        #box8{
+            grid-area: vermelho3;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div id="box1" class="box">1</div>
+        <div id="box2" class="box">2</div>
+        <div id="box3" class="box">3</div>
+        <div id="box4" class="box">4</div>
+        <div id="box5" class="box">5</div>
+        <div id="box6" class="box">6</div>
+        <div id="box7" class="box">7</div>
+        <div id="box8" class="box">8</div>
+    </div>   
+</body>
+</html>

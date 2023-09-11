@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bandeira{
+            display: flex;
+            width: 400px;
+            height: 200px;
+            border: 1px solid;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .japao{
+            justify-content: center;
+            align-items: center;
+        }
+
+        #circle{
+            background-color: red;
+            height: 80px;
+            width: 80px;
+            border-radius: 50px;
+        }
+
+        .bandeira.br{
+            background-color: green;
+            justify-content: center;
+            align-items: center;
+        }
+        #triangulo{
+            width: 0px;
+            height: 0px;
+
+            border: 100px solid black;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            border-right-width: 110px;
+            border-right-color: yellow;
+            border-left-color: transparent;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="bandeira japao">
+        <div id="circle"></div>
+    </div>
+    <div class="bandeira br">
+        <div id="triangulo"></div>
+    </div>
+</body>
+</html>
