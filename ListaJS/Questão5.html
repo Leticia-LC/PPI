@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="idNum1">Número 1: </label><br>
+    <input type="number" id="idNum1"><br><br>
+
+    <label for="idNum2">Número 2: </label><br>
+    <input type="number" id="idNum2"><br><br>
+
+    <button type="button" onclick="somar()">somar</button><br>
+    <output id="idOut"></output>
+
+    <script>
+        function somar(){
+            let num1 = Number(document.getElementById("idNum1").value)
+            let num2 = Number(document.getElementById("idNum2").value)
+
+            let resultado = num1 + num2
+
+            document.getElementById("idOut").innerText = "A soma entre " + num1 + " e " + num2 + " é igual a " + resultado
+        }
+    </script>
+    
+</body>
+</html>

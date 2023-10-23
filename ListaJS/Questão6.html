@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: antiquewhite;
+    
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+        }
+
+        .color-box{
+            background-color: aliceblue;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-bottom: 20px;
+
+        }
+
+        button{
+            background-color: aqua;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .color{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+            border: 1px solid black;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="color-box">
+            <p>Pressione a barra para gerar cor</p>
+        </div>
+        <button id="generate-button">Gerar Cor</button>
+    </div>
+
+    <script>
+        const colorBox = document.getElementById('color-box');
+        const generateButton = document.getElementById('generate-button');
+
+        function generateRandomColor(){
+            return '#' + Math.floor(Math.random()*16777215).toString(16);
+        }
+
+        function generateColorPalette(){
+            const colors = [];
+            for(let i = 0; i < 5; i++){
+                colors.push(generateRandomColor());
+            }
+
+            return colors;
+        }
+
+        generateButton.addEventListener('click', () =>{
+            const colorPalette = generateColorPalette();
+            displayColorPalette(colorPalette);
+
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if(event.key === ' '){
+                const colorPalette = generateColorPalette();
+                displayColorPalette(colorPalette);
+
+            }
+        });
+
+        function displayColorPalette(colors){
+            colorBox.innerHTML = '';
+            color.forEach((color) => {
+                const colorDiv = document.createElement('div');
+                colorDiv.style.backgroundColor = color;
+                colorDiv.className = 'color';
+                colorBox.appendChild(colorDiv);
+            });
+        
+        }
+    </script>
+    
+</body>
+</html>
