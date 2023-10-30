@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Fatorial e Sequência de Fibonacci</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora Fatorial e Sequência de Fibonacci</h1>
+    
+    <div>
+        <label for="number">Digite um número:</label>
+        <input type="number" id="number"><br><br>
+    </div>
+
+    <button onclick="calcularFatorial()">Calcular Fatorial</button>
+    <button onclick="calcularFibonacci()">Calcular Fibonacci</button><br><br>
+
+    <div id="result"></div>
+
+    <script>
+        function calcularFatorial() {
+            const numberInput = document.getElementById('number');
+            const resultDiv = document.getElementById('result');
+            const number = parseInt(numberInput.value);
+
+            if (isNaN(number) || number < 0) {
+                resultDiv.innerText = 'Por favor, insira um número inteiro não negativo.';
+            } else {
+                resultDiv.innerText = `O fatorial de ${number} é ${fatorial(number)}.`;
+            }
+        }
+
+        function calcularFibonacci() {
+            const numberInput = document.getElementById('number');
+            const resultDiv = document.getElementById('result');
+            const number = parseInt(numberInput.value);
+
+            if (isNaN(number) || number < 0) {
+                resultDiv.innerText = 'Por favor, insira um número inteiro não negativo.';
+            } else {
+                resultDiv.innerText = `A sequência de Fibonacci para ${number} termos é: ${fibonacci(number).join(', ')}`;
+            }
+        }
+
+        function fatorial(n) {
+            if (n === 0) return 1;
+            return n * fatorial(n - 1);
+        }
+
+        function fibonacci(n) {
+            const sequence = [];
+            for (let i = 0; i < n; i++) {
+                if (i <= 1) {
+                    sequence.push(i);
+                } else {
+                    sequence.push(sequence[i - 1] + sequence[i - 2]);
+                }
+            }
+            return sequence;
+        }
+    </script>
+</body>
+</html>

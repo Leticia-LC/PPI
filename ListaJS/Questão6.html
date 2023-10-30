@@ -6,49 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             text-align: center;
-            background-color: antiquewhite;
-    
+            background-color: rgb(255, 255, 255);
         }
 
-        .container{
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-
         }
 
-        .color-box{
+        .color-box {
             background-color: aliceblue;
             padding: 20px;
             border: 1px solid black;
             border-radius: 5px;
             margin-bottom: 20px;
-
         }
 
-        button{
-            background-color: aqua;
+        button {
+            background-color: rgb(20, 146, 146);
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-
         }
 
-        .color{
+        .color {
             width: 100px;
             height: 100px;
             display: inline-block;
             margin: 10px;
             border: 1px solid black;
-
         }
-
     </style>
 </head>
 <body>
@@ -60,47 +54,43 @@
     </div>
 
     <script>
-        const colorBox = document.getElementById('color-box');
+        const colorBox = document.querySelector('.color-box'); // Alterado para usar querySelector
         const generateButton = document.getElementById('generate-button');
 
-        function generateRandomColor(){
-            return '#' + Math.floor(Math.random()*16777215).toString(16);
+        function generateRandomColor() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
         }
 
-        function generateColorPalette(){
+        function generateColorPalette() {
             const colors = [];
-            for(let i = 0; i < 5; i++){
+            for (let i = 0; i < 5; i++) {
                 colors.push(generateRandomColor());
             }
 
             return colors;
         }
 
-        generateButton.addEventListener('click', () =>{
+        generateButton.addEventListener('click', () => {
             const colorPalette = generateColorPalette();
             displayColorPalette(colorPalette);
-
         });
 
         document.addEventListener('keydown', (event) => {
-            if(event.key === ' '){
+            if (event.key === ' ') {
                 const colorPalette = generateColorPalette();
                 displayColorPalette(colorPalette);
-
             }
         });
 
-        function displayColorPalette(colors){
+        function displayColorPalette(colors) {
             colorBox.innerHTML = '';
-            color.forEach((color) => {
+            colors.forEach((color) => { // Corrigido para usar "colors" em vez de "color"
                 const colorDiv = document.createElement('div');
                 colorDiv.style.backgroundColor = color;
                 colorDiv.className = 'color';
                 colorBox.appendChild(colorDiv);
             });
-        
         }
     </script>
-    
 </body>
 </html>
