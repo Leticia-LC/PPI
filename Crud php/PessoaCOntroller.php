@@ -1,7 +1,10 @@
 <?php
-class PessoaController {
-    public function _construct(){
 
+include_once "Pessoa.php";
+include_once "PessoaDAO.php";
+
+class PessoaController {
+    public function __construct(){
 
     }
 
@@ -10,14 +13,8 @@ class PessoaController {
         $pessoa = new Pessoa();
         $pessoa-> setAll(null, $nome, $email, $senha);
         $pessoaDAO = new PessoaDAO();
+
         return $pessoaDAO -> insert($pessoa);
-
-        if(length($nome)>3){
-
-        }
-        if(length($email)>10 && strpos($email, '@')>0){
-
-        }
 
     }
 
