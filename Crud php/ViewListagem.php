@@ -1,3 +1,9 @@
+<?php
+
+include_once ("PessoaCOntroller");
+include_once("Pessoa.php");
+?>
+
 <table id = "lista_usuarios">
 <thead>
     <tr>
@@ -8,4 +14,11 @@
         <th>Excluir</th>
     </tr>
 </thead>
+
+<tbody>
+    <?php
+    $controllerPessoa = new PessoaCOntroller();
+    $listarPessoas = $controllerPessoa->listarPessoas();
+    var_dump($listaPessoas);
+    ?>
 </table>

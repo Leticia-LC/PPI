@@ -27,6 +27,15 @@ Class PessoaDAO{
         return $stmt-> execute();
 
     }
+    public function selectAll(){
+        $db = new Database();
+        $conn = $db->getConnection();
+        $sql = "SELECT * FROM usuarios";
+        $stmt = $conn-> prepare($sql);
+        $stmt -> execute();
+        $result = $stmt -> fetchAll(POO::FETCH_ASSOC);
+        
+    }
 }
 
 ?>

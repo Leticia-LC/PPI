@@ -19,6 +19,8 @@ class PessoaController {
     }
 
     public function listarPessoa($nome, $email, $senha){
+        $pessoaDAO = new PessoaDAO();
+        return $pessoaDAO->selectAll();
 
     }
 
