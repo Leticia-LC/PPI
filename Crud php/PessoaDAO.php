@@ -34,7 +34,7 @@ Class PessoaDAO{
         $stmt = $conn-> prepare($sql);
         $stmt -> execute();
         $result = $stmt -> fetchAll(POO::FETCH_ASSOC);
-        
+        return $result;
     }
 }
 
