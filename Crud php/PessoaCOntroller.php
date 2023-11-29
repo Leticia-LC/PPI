@@ -1,45 +1,65 @@
 <?php
-
 include_once "Pessoa.php";
 include_once "PessoaDAO.php";
 
-class PessoaController {
-    public function __construct(){
+class PessoaController
+{
 
+    public function __construct()
+    {
     }
 
-    public function cadastrarPessoa($nome, $email, $senha){
-
+    public function cadastrarPessoa($nome, $email, $data, $telefone, $senha)
+    {
         $pessoa = new Pessoa();
-        $pessoa-> setAll(null, $nome, $email, $senha);
+        $pessoa->setAll(null, $nome, $email, $data, $telefone, $senha);
         $pessoaDAO = new PessoaDAO();
-
-        return $pessoaDAO -> insert($pessoa);
-
+        return $pessoaDAO->insert($pessoa);
     }
 
-    public function listarPessoa($nome, $email, $senha){
+    public function listarPessoas()
+    {
         $pessoaDAO = new PessoaDAO();
         return $pessoaDAO->selectAll();
-
     }
 
-    public function getPessoa($id){
+    public function getPessoa($id)
+    {
+        $pessoaDAO = new PessoaDAO();
 
+        $usuario = $this->$pessoaDAO->byId($id);
+
+        if ($usuario) {
+            return $usuario;
+        } else {
+            return null;
+        }
     }
 
-    public function editarPessoa($id){
-
-    }
-
-    public function excluirPessoa($id){
-
-    }
-    public function autenticarPessoa($id){
-
+    public function editarPessoa($id, $nome, $email, $data, $telefone, $senha)
+    {
+        $pessoaDAO = new PessoaDAO();
+        return $pessoaDAO->update($id, $nome, $email, $data, $telefone, $senha);
     }
 
 
+    public function deletarPessoa($userId)
+    {
+        $pessoaDAO = new PessoaDAO();
+        $pessoaDAO->delete($userId);
+    }
+
+    public function autenticarPessoa($email, $senha)
+    {
+        $pessoaDAO = new PessoaDAO();
+        $usuario = $pessoaDAO->autenticar($email, $senha);
+
+        return $usuario;
+    }
+
+    public function pesquisarPessoa($id)
+    {
+        $pessoaDAO = new PessoaDAO();
+        return $pessoaDAO->pesquisarPorId($id);
+    }
 }
-
-?>
