@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #aadbe8;
     margin: 0;
     display: flex;
     align-items: center;
@@ -10,7 +10,7 @@ body {
 }
 
 .table-container {
-    background-color: #fff;
+    background-color: #bfeeff; 
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -26,13 +26,13 @@ body {
 
 #lista_usuarios th,
 #lista_usuarios td {
-    border: 1px solid #ddd;
+    border: 1px solid #aadbe8;
     padding: 12px;
     text-align: left;
 }
 
 #lista_usuarios th {
-    background-color: #0c637e;
+    background-color: #0c8ed5; 
     color: #fff;
 }
 
@@ -42,12 +42,12 @@ body {
 
 #lista_usuarios a {
     text-decoration: none;
-    color: #0c637e;
+    color: #0a7fbb; 
     font-weight: bold;
 }
 
 #lista_usuarios a:hover {
-    color: #084e63;
+    color: #054d73; 
 }
 
 .search-bar-container {
@@ -60,14 +60,14 @@ body {
     width: 70%;
     padding: 14px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid #87c9d8;
     border-radius: 4px;
     font-size: 16px;
     margin-right: 10px;
 }
 
 .search-button {
-    background-color: #0c637e;
+    background-color: #0fba92;
     color: #fff;
     padding: 12px 15px;
     border: none;
@@ -77,11 +77,11 @@ body {
 }
 
 .search-button:hover {
-    background-color: #084e63;
+    background-color: #08634c;
 }
 
 .add-button {
-    background-color: #0c637e;
+    background-color: #0c7e61;
     color: #fff;
     padding: 12px 15px;
     border: none;
@@ -89,9 +89,8 @@ body {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
-
 }
 
 .add-button:hover {
-    background-color: #084e63;
+    background-color: #086340;
 }

@@ -10,7 +10,7 @@
             $this-> user = "root";
             $this-> password = "aluno";
             $this-> host = "localhost";
-            $this-> database = "aula";
+            $this-> database = "crud";
             $this->connection = new POO ("mysql: host=$host;dbname=$database", $user, $password);
             return $this -> connection;
             
